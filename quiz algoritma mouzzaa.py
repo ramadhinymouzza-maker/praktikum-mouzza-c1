@@ -1,0 +1,36 @@
+# Quiz Algoritma Python - Input, Percabangan, Perulangan While
+
+target_nilai = {
+    "andi": 70,
+    "budi": 75,
+    "citra": 80
+}
+
+nama_input = input("Nama : ")
+nama = nama_input.lower() 
+
+if nama in target_nilai:
+    target = target_nilai[nama]
+    # Tampilkan target
+    print(f"Targetku {target}!")
+
+    percobaan = 1
+    lulus = False
+    
+    # while
+    while percobaan <= 3:
+        nilai = int(input(f"Nilai {percobaan} : "))
+        
+        if nilai >= target:
+            lulus = True
+            break
+        percobaan += 1
+    
+    # Output
+    nama_cap = nama_input.capitalize()
+    if lulus:
+        print(f"\n{nama_cap} berhasil lulus setelah {percobaan} kali percobaan!")
+    else:
+        print(f"\n{nama_cap} tidak lulus setelah 3 kali percobaan!")
+else:
+    print("Nama tidak ditemukan! Masukkan Andi, Budi, atau Citra.")
